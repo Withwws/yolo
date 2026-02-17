@@ -204,13 +204,13 @@ if __name__ == "__main__":
     
     # Example: Split dataset
     # Uncomment and modify paths as needed
-    # preparer.split_dataset(
-    #     images_dir="./raw_data/images",
-    #     labels_dir="./raw_data/labels",
-    #     train_ratio=0.7,
-    #     val_ratio=0.2,
-    #     test_ratio=0.1
-    # )
+    preparer.split_dataset(
+        images_dir="./raw_data/images",
+        labels_dir="./raw_data/labels",
+        train_ratio=0.7,
+        val_ratio=0.2,
+        test_ratio=0.1
+    )
     
     print("\nTo use this script:")
     print("1. Place your images in a source directory")
