@@ -12,16 +12,11 @@ dist/
 build/
 
 # PyTorch
-*.pth
-*.pt
-*.onnx
 
 
 
 # Training outputs
-runs/
-wandb/
-*.log
+
 
 # IDE
 .vscode/
