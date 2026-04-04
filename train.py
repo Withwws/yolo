@@ -1,6 +1,6 @@
 """
 YOLO Training Script for Custom Object Detection
-Train YOLOv8 on your custom dataset for specific class detection.
+Train YOLO11 on your custom dataset for specific class detection.
 """
 import os
 import yaml
@@ -32,7 +32,7 @@ class YOLOTrainer:
     
     def setup_model(self):
         """Initialize YOLO model."""
-        model_name = self.config.get('model', 'yolov8n.pt')
+        model_name = self.config.get('model', 'yolo11n.pt')
         
         print(f"\n{'='*60}")
         print(f"Initializing YOLO model: {model_name}")
@@ -95,6 +95,14 @@ class YOLOTrainer:
         print(f"\n{'='*60}")
         print("Starting Training")
         print(f"{'='*60}\n")
+
+        # Ultralytics expects multi_scale as a float ratio (e.g. 0.2), not bool.
+        raw_multi_scale = self.config.get('multi_scale', 0.0)
+        if isinstance(raw_multi_scale, bool):
+            multi_scale = 0.2 if raw_multi_scale else 0.0
+        else:
+            multi_scale = float(raw_multi_scale)
+        multi_scale = max(0.0, min(0.9, multi_scale))
         
         # Training parameters
         training_args = {
@@ -128,6 +136,8 @@ class YOLOTrainer:
             'fliplr': self.config.get('fliplr', 0.5),
             'mosaic': self.config.get('mosaic', 1.0),
             'mixup': self.config.get('mixup', 0.0),
+            'close_mosaic': self.config.get('close_mosaic', 10),
+            'multi_scale': multi_scale,
         }
         
         # Print training configuration
@@ -163,7 +173,7 @@ class YOLOTrainer:
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description="Train YOLOv8 for custom object detection"
+        description="Train YOLO11 for custom object detection"
     )
     parser.add_argument(
         '--config',

@@ -91,7 +91,7 @@ def example_training_config():
     epochs: 100        # Number of training epochs
     batch: 16          # Batch size (reduce if OOM)
     imgsz: 640         # Input image size
-    model: yolov8n.pt  # Model size (n/s/m/l/x)
+    model: yolo11n.pt  # Model size (n/s/m/l/x)
     lr0: 0.01          # Initial learning rate
     patience: 50       # Early stopping patience
     """
@@ -172,7 +172,7 @@ def example_best_practices():
    - Balanced class distribution
 
 2. Starting Small:
-   - Begin with yolov8n.pt for fast iteration
+    - Begin with yolo11n.pt for fast iteration
    - Use small batch size to test pipeline
    - Validate dataset before full training
 

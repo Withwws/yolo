@@ -1,6 +1,6 @@
 # YOLO Custom Object Detection Project
 
-A complete YOLOv8-based object detection project for training custom models on specific classes. This project includes data preparation, training, and inference capabilities.
+A complete YOLO11-based object detection project for training custom models on specific classes. This project includes data preparation, training, and inference capabilities.
 
 ## 🚀 Features
 
@@ -9,7 +9,7 @@ A complete YOLOv8-based object detection project for training custom models on s
 - **Flexible Training**: Configurable hyperparameters and augmentation settings
 - **Multiple Inference Modes**: Test on images, videos, folders, or webcam
 - **Easy Configuration**: YAML-based configuration system
-- **Pre-trained Models**: Leverage YOLOv8 pretrained weights
+- **Pre-trained Models**: Leverage YOLO11 pretrained weights
 
 ## 📋 Requirements
 
@@ -147,7 +147,7 @@ names:
 epochs: 100
 batch: 16
 imgsz: 640
-model: yolov8n.pt  # Options: yolov8n, yolov8s, yolov8m, yolov8l, yolov8x
+model: yolo11n.pt  # Options: yolo11n, yolo11s, yolo11m, yolo11l, yolo11x
 
 # Optimization
 lr0: 0.01
@@ -158,11 +158,11 @@ optimizer: SGD
 
 | Model | Size | Speed | Accuracy |
 |-------|------|-------|----------|
-| yolov8n | Nano | Fastest | Good |
-| yolov8s | Small | Fast | Better |
-| yolov8m | Medium | Moderate | Great |
-| yolov8l | Large | Slow | Excellent |
-| yolov8x | Extra Large | Slowest | Best |
+| yolo11n | Nano | Fastest | Good |
+| yolo11s | Small | Fast | Better |
+| yolo11m | Medium | Moderate | Great |
+| yolo11l | Large | Slow | Excellent |
+| yolo11x | Extra Large | Slowest | Best |
 
 ## 🎯 Training
 
@@ -279,7 +279,7 @@ Then open http://localhost:6006 in your browser.
 
 1. Start with a smaller model for faster iteration:
    ```yaml
-   model: yolov8n.pt
+   model: yolo11n.pt
    epochs: 50
    ```
 
@@ -287,7 +287,7 @@ Then open http://localhost:6006 in your browser.
 
 3. If needed, switch to a larger model:
    ```yaml
-   model: yolov8s.pt
+   model: yolo11s.pt
    epochs: 100
    ```
 
@@ -299,14 +299,14 @@ Then open http://localhost:6006 in your browser.
   ```yaml
   batch: 8  # or 4
   ```
-- Use a smaller model: `yolov8n.pt`
+- Use a smaller model: `yolo11n.pt`
 
 ### Low Accuracy
 
 - Increase training epochs
 - Add more training data
 - Adjust data augmentation parameters
-- Try a larger model (yolov8s, yolov8m)
+- Try a larger model (yolo11s, yolo11m)
 
 ### No Objects Detected
 
@@ -316,7 +316,7 @@ Then open http://localhost:6006 in your browser.
 
 ## 📚 Additional Resources
 
-- [YOLOv8 Documentation](https://docs.ultralytics.com/)
+- [YOLO11 Documentation](https://docs.ultralytics.com/)
 - [YOLO Label Tools](https://github.com/heartexlabs/labelImg)
 - [Data Augmentation Guide](https://docs.ultralytics.com/modes/train/#augmentation)
 
@@ -330,7 +330,7 @@ Then open http://localhost:6006 in your browser.
 
 ## 📝 License
 
-This project uses the YOLOv8 model from Ultralytics, which is licensed under AGPL-3.0.
+This project uses the YOLO11 model from Ultralytics, which is licensed under AGPL-3.0.
 
 ## 🤝 Contributing
 
@@ -340,7 +340,7 @@ Feel free to open issues or submit pull requests for improvements!
 
 For issues with:
 - This project: Check the troubleshooting section
-- YOLOv8: Visit [Ultralytics GitHub](https://github.com/ultralytics/ultralytics)
+- YOLO11: Visit [Ultralytics GitHub](https://github.com/ultralytics/ultralytics)
 - General YOLO questions: Check [Ultralytics Docs](https://docs.ultralytics.com/)
 
 ---

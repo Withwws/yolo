@@ -13,7 +13,8 @@ build/
 
 # PyTorch
 
-
+dataset/
+raw_data/
 
 # Training outputs
 
